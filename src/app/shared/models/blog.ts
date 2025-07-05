@@ -7,3 +7,4 @@ export class Blog {
   user_id?: number;
   user?: User;
 }
+// TODO: ng g s core/services/blog

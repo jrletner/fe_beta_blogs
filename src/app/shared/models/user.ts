@@ -5,3 +5,5 @@ export class User {
   first_name: string = '';
   last_name: string = '';
 }
+
+// TODO: ng g s core/services/user
