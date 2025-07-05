@@ -1,13 +1,29 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { MainLayoutComponent } from './core/components/main-layout/main-layout.component';
+import { Blog } from './shared/models/blog';
+import { BlogService } from './core/services/blog.service';
+import { BlogListComponent } from './shared/blogs/blog-list/blog-list.component';
 
 @Component({
   selector: 'app-root',
-  imports: [MainLayoutComponent],
+  imports: [BlogListComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'fe_beta_blogs';
+
+  blogs: Blog[] = [];
+  constructor(private blogsService: BlogService) {}
+
+  ngOnInit(): void {
+    this.blogsService.getBlogs().subscribe({
+      next: (blogs) => {
+        this.blogs = blogs;
+      },
+      error: (error) => {
+        console.log(error);
+      },
+    });
+  }
 }
