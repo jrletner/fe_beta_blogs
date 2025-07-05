@@ -8,8 +8,8 @@
         <h2>{{ blog.title }}</h2>
         <p>{{ blog.content }}</p>
       </div>
-      <img
-        src="https://assets.bitdegree.org/online-learning-platforms/storage/media/2018/08/how-to-become-a-programmer.jpg"
+            <img
+        [src]="'https://picsum.photos/200/300?random=' + blog.id"
         alt="blog image"
         class="blog-image"
       />
