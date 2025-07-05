@@ -20,6 +20,7 @@ export class AppComponent {
     this.blogsService.getBlogs().subscribe({
       next: (blogs) => {
         this.blogs = blogs;
+        console.log(this.blogs);
       },
       error: (error) => {
         console.log(error);
