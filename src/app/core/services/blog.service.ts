@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Blog } from '../../shared/models/blog';
-import { environment } from '../../../environments/environment';
+import { environment } from '../../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root',
@@ -14,3 +14,5 @@ export class BlogService {
     return this.http.get<Blog[]>(`${environment.apiUrl}/blogs`);
   }
 }
+
+// TODO: ng g s core/services/blog
